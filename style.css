@@ -89,7 +89,7 @@ section.main p {
 
 @keyframes typewriter {
     from { width: 0; }
-    to { width: 133ch; }
+    to { width: 140ch; }
 }
 
 @keyframes blinkTextCursor {
