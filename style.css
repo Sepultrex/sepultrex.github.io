@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0c0c14;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+}
+
+
+header nav .header_links ul li, section.main ul li {
+    list-style-type: none;
+}
+
+section.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 70vh;
+    animation: fadeInUp .8s;
+}
+
+.ana {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid #21222b93;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.sepultrex {
+    color: #fffffe;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.cof {
+    color: #aeaeae;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.lera{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.php{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 10px;
+}
+
+section.main p {
+    position: relative;
+    top: 50%;
+    border-right: 2px solid rgba(255, 255, 255, .75);
+    white-space: nowrap;
+    overflow: hidden;
+    color: #a8a8a8;
+    animation: typewriter 4s steps(40) 0s 1 normal both, blinkTextCursor 0.75s step-end infinite;
+}
+
+.line {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typewriter 4s steps(40) 0s 1 normal both, blinkTextCursor 0.75s step-end infinite;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 133ch; }
+}
+
+@keyframes blinkTextCursor {
+    from { border-right-color: rgba(255, 255, 255, 0.75); }
+    to { border-right-color: transparent; }
+}
+
+@media (max-width: 1400px) {
+    .line {
+        font-size: 4px;
+    }
+}
+
+.line:nth-child(1) { animation-delay: 0ms; }
+.line:nth-child(2) { animation-delay: 50ms; }
+.line:nth-child(3) { animation-delay: 100ms; }
+.line:nth-child(4) { animation-delay: 150ms; }
+.line:nth-child(5) { animation-delay: 200ms; }
+.line:nth-child(6) { animation-delay: 250ms; }
+.line:nth-child(7) { animation-delay: 300ms; }
+.line:nth-child(8) { animation-delay: 350ms; }
+.line:nth-child(9) { animation-delay: 400ms; }
+.line:nth-child(10) { animation-delay: 450ms; }
+.line:nth-child(11) { animation-delay: 500ms; }
+.line:nth-child(12) { animation-delay: 550ms; }
+.line:nth-child(13) { animation-delay: 600ms; }
+.line:nth-child(14) { animation-delay: 650ms; }
+.line:nth-child(15) { animation-delay: 700ms; }
+.line:nth-child(16) { animation-delay: 750ms; }
+.line:nth-child(17) { animation-delay: 800ms; }
+.line:nth-child(18) { animation-delay: 850ms; }
+.line:nth-child(19) { animation-delay: 900ms; }
+.line:nth-child(20) { animation-delay: 950ms; }
+.line:nth-child(21) { animation-delay: 1000ms; }
+
+ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+ul li {
+    margin: 0 5px;
+}
+
+ul li a {
+    color: #a6a8b8;
+    display: flex;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 5px;
+    transition: 0.2s all;
+}
+
+ul li a:hover {
+    transition: 0.2s all;
+    color: #fff;
+    transform: scale(1.3);
+}
