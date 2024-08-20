@@ -129,6 +129,7 @@ section.main p {
 .line:nth-child(24) { animation-delay: 1200ms; }
 .line:nth-child(25) { animation-delay: 1250ms; }
 .line:nth-child(26) { animation-delay: 1300ms; }
+.line:nth-child(27) { animation-delay: 1300ms; }
 
 ul {
     display: flex;
