@@ -123,7 +123,12 @@ section.main p {
 .line:nth-child(18) { animation-delay: 850ms; }
 .line:nth-child(19) { animation-delay: 900ms; }
 .line:nth-child(20) { animation-delay: 950ms; }
-.line:nth-child(21) { animation-delay: 1000ms; }
+.line:nth-child(21) { animation-delay: 1050ms; }
+.line:nth-child(22) { animation-delay: 1100ms; }
+.line:nth-child(23) { animation-delay: 1150ms; }
+.line:nth-child(24) { animation-delay: 1200ms; }
+.line:nth-child(25) { animation-delay: 1250ms; }
+.line:nth-child(26) { animation-delay: 1300ms; }
 
 ul {
     display: flex;
