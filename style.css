@@ -68,6 +68,16 @@ section.main {
     font-size: 10px;
 }
 
+.alaka{
+    transition: 0.2s all;
+}
+
+.alaka:hover {
+    font-size: 14.3px;
+    transition: 0.2s all;
+    transform: scale(1.3);
+}
+
 section.main p {
     position: relative;
     top: 50%;
@@ -89,7 +99,7 @@ section.main p {
 
 @keyframes typewriter {
     from { width: 0; }
-    to { width: 140ch; }
+    to { width: 85ch; }
 }
 
 @keyframes blinkTextCursor {
