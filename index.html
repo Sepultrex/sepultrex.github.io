@@ -1,61 +1,158 @@
 <!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/ekmas/cs16.css@main/css/cs16.min.css">
 
 <head>
     <title>sinop</title>
     <link rel="stylesheet" href="sinop.css">
-    <link rel="icon" href="img/ryo.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Man, I feel like Gordon Freeman!">
+    <link rel="icon" href="img/halfsepul.png">
 </head>
 
 <body>
-    <div>
-        <h1>Sepultrex socials</h1>
-        <h4>click the images to go to links</h3>
+    <div class="options">
+        <div class="title">
+            <div class="icon"><img src="img/seplve2.png" class="logo"></div>
+            <p class="text" id="titlenick">Sepultrex</p>
+            <div class="kapamatusu">
+                <button class="cs-btn close"></button>
+            </div>
+        </div>
+        <div class="cs-tabs">
+            <input class="radiotab" name="tabs" tabindex="1" type="radio" id="tabone" checked="checked" />
+            <label class="label" for="tabone">About Me</label>
+            <div class="panel" tabindex="1">
+                <h2>Sepultrex aka CeoOfSinop</h2>
+                <hr class="cs-hr" /><br>
+                <p>I am a Pull Stack Developer with 8 years of experience.<br> I just pull things off the internet and put it into my code.</p>
+                <p><br>I enjoy reading manga, watching anime and science fiction movies especially films by Christopher Nolan. I also like building simple websites, making simple Python scripts, and custom CSS for programs, websites, etc. Long story short I enjoy tweaking/customizing things or making them more useful for myself. Maybe it's a bit irrelevant but I'm also a fan of Hideo Kojima’s work. :d</p>
+                <br>
+
+                <section>
+                    <button type="button" class="cs-btn" onclick="document.querySelector('.cs-dialog').showModal();">
+                        Contact Me
+                    </button>
+                    <dialog class="cs-dialog">
+                        <form method="dialog">
+                            <div class="heading">
+                                <div class="wrapper">
+                                    <div class="icon"></div>
+                                    <p class="text">Contact Me</p>
+                                </div>
+                                <button class="cs-btn close"></button>
+                            </div>
+                            <div class="content">
+                                You can contact me on Discord or any social app. <br>Discord Nick: <i>sepultrex</i>
+                            </div>
+                            <menu class="footer-btns">
+                                <button class="cs-btn">OK</button>
+                                <button class="cs-btn">Cancel</button>
+                                <button class="cs-btn">Apply</button>
+                            </menu>
+                        </form>
+                    </dialog>
+                </section>
+
+            </div>
+            <input class="radiotab" tabindex="1" name="tabs" type="radio" id="tabtwo" />
+            <label class="label" for="tabtwo">Socials</label>
+            <div class="panel" tabindex="1">
+                <h2>My Social Media Links</h2>
+                <hr class="cs-hr" /><br>
+                <a href="https://x.com/sepultrex" target="_blank">
+                    <button class="cs-btn">X/Twitter</button>
+                </a>
+                <a href="https://open.spotify.com/user/xr3b4ocme24xp1b5cocgarfjw" target="_blank">
+                    <button class="cs-btn">Spotify</button>
+                </a>
+                <a href="https://www.twitch.tv/ceoofsinop" target="_blank">
+                    <button class="cs-btn">Twitch</button>
+                </a>
+                <a href="https://github.com/Sepultrex" target="_blank">
+                    <button class="cs-btn">Github</button>
+                </a>
+                <a href="https://anilist.co/user/Sinop/" target="_blank">
+                    <button class="cs-btn">Anilist</button>
+                </a>
+                <a href="https://www.last.fm/tr/user/sepultrex" target="_blank">
+                    <button class="cs-btn">Last.fm</button>
+                </a>
+            </div>
+            <input class="radiotab" tabindex="1" name="tabs" type="radio" id="tabthree" />
+            <label class="label" for="tabthree">Services</label>
+            <div class="panel" tabindex="1">
+                <label class="cs-select__label" for="cars">Choose a service</label>
+                <select class="cs-select" name="cars" id="cars">
+                    <option value="sayac">Visitor Count</option>
+                    <option value="discord">Discord Status</option>
+                    <option value="spotify">Spotify Listening</option>
+                    <option value="lastfm">Last.fm</option>
+                    <option value="credits">Credits</option>
+
+                </select>
+                <br> <br>
+                <hr class="cs-hr" />
+
+                <div id="sayacDiv">
+                    <img src="https://count.getloli.com/@:sepultrex" / id="sayacimg">
+                </div>
+
+                <div id="discordDiv" style="display:none;">
+                    <a href="https://discord.com/users/547781202019483651" target="_blank">
+                        <img width="100%" alt="Discord Status"
+                            src="https://lanyard.cnrad.dev/api/547781202019483651?bg=4a5942&borderRadius=1&theme=&showDisplayName=true&animated=false&hideStatus=false&hideActivity=false"
+                            id="discordimg">
+                    </a>
+                </div>
+
+                <div id="spotifyDiv" style="display:none;">
+                    <a href="https://spotify-github-profile.kittinanx.com/api/view?uid=xr3b4ocme24xp1b5cocgarfjw&redirect=true"
+                        target="_blank">
+                        <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=xr3b4ocme24xp1b5cocgarfjw&cover_image=true&theme=default&show_offline=false&background_color=4a5942&interchange=false&bar_color_cover=false&bar_color=ffffff"
+                            alt="Spotify Profile" id="spotifyimg" />
+                    </a>
+                </div>
+
+                <div id="lastfmDiv" style="display:none;">
+                    <a href="https://discord.com/users/547781202019483651" target="_blank">
+                        <img width="100%" alt="Last.fm"
+                            src="https://lastfm-recently-played.vercel.app/api?user=sepultrex&loved=true&loved_style=1&footer_style=compact_stats&show_user=footer&count=3&width=560&bg_color=4a5942"
+                            id="lastfmimg">
+                    </a>
+                </div>
+
+                <div id="creditsDiv" style="display:none;">
+                    <a href="https://github.com/ekmas/cs16.css" target="_blank">
+                        <button class="cs-btn">used css: ekmas/cs16.css</button>
+                    </a>
+                    <a href="https://github.com/journey-ad/Moe-Counter" target="_blank">
+                        <button class="cs-btn">visitor counter</button>
+                    </a>
+                    <a href="https://github.com/cnrad/lanyard-profile-readme" target="_blank">
+                        <button class="cs-btn">discord profile thing</button>
+                    </a>
+                    <a href="https://github.com/kittinan/spotify-github-profile" target="_blank">
+                        <button class="cs-btn">spotify playing now</button>
+                    </a>
+                    <a href="https://github.com/JeffreyCA/lastfm-recently-played-readme" target="_blank">
+                        <button class="cs-btn">last.fm recently played </button>
+                    </a>
+                    <br><br>
+                    made in sinop with<div class="cs-tooltip">👓<span style="bottom: 100%; width: 100px; left: 50%; margin-left: -50px" class="text">2.0</span></div> and 💝 by sepul
+                </div>
+
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div class="bottomtus">
+                <button class="cs-btn" id="bottomtusic">OK</button>
+                <button class="cs-btn" id="bottomtusic">Cancel</button>
+                <button class="cs-btn" id="bottomtusic">Apply</button>
+            </div>
+        </div>
     </div>
-
-    <div class="roy">
-        <div>
-            <div class="text-overlay">Spotify</div>
-            <a href="https://open.spotify.com/user/xr3b4ocme24xp1b5cocgarfjw?si=342359d7e0474dc9">
-                <img src="img/spotify.png">
-            </a>
-        </div>
-
-        <div>
-            <div class="text-overlay">AniList</div>
-            <a href="https://anilist.co/user/Sinop/">
-                <img src="img/anilist.png">
-            </a>
-        </div>
-
-        <div>
-            <div class="text-overlay">Twitch</div>
-            <a href="https://twitch.tv/ceoofsinop">
-                <img src="img/twitch.png">
-            </a>
-        </div>
-
-        <div>
-            <div class="text-overlay">X (Twitter)</div>
-            <a href="https://x.com/ceoofsinop">
-                <img src="img/twitter.png">
-            </a>
-        </div>
-
-        <div>
-            <div class="text-overlay">Github</div>
-            <a href="https://github.com/Sepultrex">
-                <img src="img/github.png">
-            </a>
-        </div>
-
-    </div>
-
-    <h5>ℹ️ sepultrex also known as <i>sinop</i> or <i>ceoofsinop</i> <br> 🚸Irmak tanrısı Asopus'un güzeller güzeli kızı</h5>
-    <h6>⚠️ The images used do not belong to me. Thanks to the artists and Aki Hamaji for their beautiful creations. If you are the owner and would like them removed please contact me. <br> 🎨 You can find the artists on <a href="https://github.com/Sepultrex/sepultrex.github.io/blob/main/README.md" class="about-link">Github Readme</a> section</h6>
-
+    <script src="halflife.js"></script>
 </body>
 
 </html>
-
-
-
