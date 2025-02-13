@@ -20,17 +20,17 @@ body {
     border-bottom: 1px solid #292C21;
 }
 
-.panel{
+.panel {
     height: 363px;
 }
 
-.logo{
+.logo {
     width: 25px;
     height: auto;
     margin-top: 0px;
 }
 
-#titlenick{
+#titlenick {
     margin-top: -5px;
 }
 
@@ -60,14 +60,17 @@ body {
     width: 478.8px;
 }
 
-#lastfmimg{
+#lastfmimg {
     margin-top: 12px;
     margin-bottom: 2px;
     width: 478.8px;
     height: 220px;
 }
 
-#spotifyimg, #discordimg, #sayacimg, #lastfmimg {
+#spotifyimg,
+#discordimg,
+#sayacimg,
+#lastfmimg {
     border-top: 1px solid #8C9284;
     border-left: 1px solid #8C9284;
     border-right: 1px solid #292C21;
@@ -91,6 +94,12 @@ body {
     margin-left: auto;
 }
 
-.kapamatusu, .bottomtus {
+.kapamatusu,
+.bottomtus {
     margin-left: auto;
+}
+
+#oldver {
+    position: relative;
+    top: 120px;
 }
