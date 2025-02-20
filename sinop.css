@@ -103,3 +103,8 @@ body {
     position: relative;
     top: 120px;
 }
+
+.visitsinop {
+    text-decoration: none;
+    color: white;
+}
