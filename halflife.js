@@ -1,12 +1,14 @@
 document.getElementById("cars").addEventListener("change", function () {
   var sayacDiv = document.getElementById("sayacDiv");
   var discordDiv = document.getElementById("discordDiv");
+  var steamDiv = document.getElementById("steamDiv");
   var spotifyDiv = document.getElementById("spotifyDiv");
   var lastfmDiv = document.getElementById("lastfmDiv");
   var creditsDiv = document.getElementById("creditsDiv");
 
   sayacDiv.style.display = "none";
   discordDiv.style.display = "none";
+  steamDiv.style.display = "none";
   lastfmDiv.style.display = "none";
   spotifyDiv.style.display = "none";
   creditsDiv.style.display = "none";
@@ -15,6 +17,8 @@ document.getElementById("cars").addEventListener("change", function () {
     sayacDiv.style.display = "block";
   } else if (this.value === "discord") {
     discordDiv.style.display = "block";
+  } else if (this.value === "steam") {
+    steamDiv.style.display = "block";
   } else if (this.value === "spotify") {
     spotifyDiv.style.display = "block";
   } else if (this.value === "lastfm") {
@@ -23,3 +27,4 @@ document.getElementById("cars").addEventListener("change", function () {
     creditsDiv.style.display = "block";
   }
 });
+// l

@@ -42,39 +42,27 @@ body {
     font-size: 15px;
 }
 
-#spotifyimg {
-    margin-top: 3px;
-    margin-bottom: 2px;
-    width: 196px;
-}
-
-#discordimg {
-    margin-top: 12px;
-    margin-bottom: 2px;
-    width: 478.8px;
-}
-
-#sayacimg {
-    margin-top: 12px;
-    margin-bottom: 2px;
-    width: 478.8px;
-}
-
-#lastfmimg {
-    margin-top: 12px;
-    margin-bottom: 2px;
-    width: 478.8px;
-    height: 220px;
-}
-
+/* border*/
 #spotifyimg,
 #discordimg,
+#steamimg,
 #sayacimg,
 #lastfmimg {
     border-top: 1px solid #8C9284;
     border-left: 1px solid #8C9284;
     border-right: 1px solid #292C21;
     border-bottom: 1px solid #292C21;
+}
+
+/*width, margin, etc.*/
+#discordimg,
+#sayacimg,
+#steamimg,
+#lastfmimg,
+#spotifyimg {
+    margin-top: 12px;
+    margin-bottom: 2px;
+    width: 478.8px;
 }
 
 .bottom {
@@ -108,3 +96,4 @@ body {
     text-decoration: none;
     color: white;
 }
+/* f */

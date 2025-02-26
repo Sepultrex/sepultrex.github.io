@@ -92,8 +92,9 @@
                 <select class="cs-select" name="cars" id="cars">
                     <option value="sayac">Visitor Count</option>
                     <option value="discord">Discord Status</option>
+                    <option value="steam">Steam Status</option>
                     <option value="spotify">Spotify Listening</option>
-                    <option value="lastfm">Last.fm</option>
+                    <option value="lastfm">Last.fm recently played</option>
                     <option value="credits">Credits</option>
 
                 </select>
@@ -101,7 +102,8 @@
                 <hr class="cs-hr" />
 
                 <div id="sayacDiv">
-                    <img src="https://count.getloli.com/@:sepultrex" / id="sayacimg">
+                    <img src="https://count.getloli.com/@:sepultrex" id="sayacimg">
+                    <h2>people visited</h2>
                 </div>
 
                 <div id="discordDiv" style="display:none;">
@@ -112,12 +114,21 @@
                     </a>
                 </div>
 
+                <div id="steamDiv" style="display:none;">
+                    <a href="https://discord.com/users/547781202019483651" target="_blank">
+                        <img width="300" alt="steam"
+                            src="https://github-readme-steam-card.vercel.app/status/?steamid=76561199057877336"
+                            id="steamimg">
+                    </a>
+                </div>
+
                 <div id="spotifyDiv" style="display:none;">
                     <a href="https://spotify-github-profile.kittinanx.com/api/view?uid=xr3b4ocme24xp1b5cocgarfjw&redirect=true"
                         target="_blank">
-                        <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=xr3b4ocme24xp1b5cocgarfjw&cover_image=true&theme=default&show_offline=false&background_color=4a5942&interchange=false&bar_color_cover=false&bar_color=ffffff"
+                        <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=xr3b4ocme24xp1b5cocgarfjw&cover_image=true&theme=natemoo-re&show_offline=false&background_color=4a5942&interchange=false&bar_color_cover=false&bar_color=ffffff"
                             alt="Spotify Profile" id="spotifyimg" />
                     </a>
+                    <h2>Now playing</h2>
                 </div>
 
                 <div id="lastfmDiv" style="display:none;">
@@ -138,6 +149,9 @@
                     <a href="https://github.com/cnrad/lanyard-profile-readme" target="_blank">
                         <button class="cs-btn">discord profile thing</button>
                     </a>
+                    <a href="https://github.com/FN-FAL113/github-readme-steam-card" target="_blank">
+                        <button class="cs-btn">steam profile thing </button>
+                    </a>
                     <a href="https://github.com/kittinan/spotify-github-profile" target="_blank">
                         <button class="cs-btn">spotify playing now</button>
                     </a>
@@ -146,8 +160,15 @@
                     </a>
 
                     <br><br>
-                    
-                    made in <div class="cs-tooltip"><a href="https://sinop.goturkiye.com/" class="visitsinop">sinop</a><span style="bottom: 100%; width: 120px; left: 50%; margin-left: -50px" class="text">sinop.goturkiye.com</span></div> with <div class="cs-tooltip">👓<span style="bottom: 100%; width: 100px; left: 50%; margin-left: -50px" class="text">2.0</span></div> and <div class="cs-tooltip">💝<span style="bottom: 100%; width: 100px; left: 50%; margin-left: -50px" class="text">love</span></div> by sepul<br>
+
+                    made in <div class="cs-tooltip"><a href="https://sinop.goturkiye.com/"
+                            class="visitsinop">sinop</a><span
+                            style="bottom: 100%; width: 120px; left: 50%; margin-left: -50px"
+                            class="text">sinop.goturkiye.com</span></div> with <div class="cs-tooltip">👓<span
+                            style="bottom: 100%; width: 100px; left: 50%; margin-left: -50px" class="text">2.0</span>
+                    </div> and <div class="cs-tooltip">💝<span
+                            style="bottom: 100%; width: 100px; left: 50%; margin-left: -50px" class="text">love</span>
+                    </div> by sepul<br>
 
                     <div id="oldver">
                         <p>old versions</p>
@@ -175,3 +196,4 @@
 </body>
 
 </html>
+<!-- e -->
