@@ -59,7 +59,8 @@ body {
 #sayacimg,
 #steamimg,
 #lastfmimg,
-#spotifyimg {
+#spotifyimg,
+#creditsDiv {
     margin-top: 12px;
     margin-bottom: 2px;
     width: 478.8px;
