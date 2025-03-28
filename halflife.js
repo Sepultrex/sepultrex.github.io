@@ -1,12 +1,32 @@
 const introOverlay = document.getElementById('intro-overlay');
-introOverlay.addEventListener('transitionend', () => {
-    introOverlay.style.display = 'none';
-}, { once: true });
+const introVideo = document.getElementById('intro-video');
+
+introVideo.muted = true;
+introVideo.play().catch(error => {
+    console.log('Autoplay was prevented:', error);
+});
+
+function hideIntroOverlay() {
+    introOverlay.classList.add('hidden');
+    
+    function onTransitionEnd() {
+        introOverlay.style.display = 'none';
+        introOverlay.removeEventListener('transitionend', onTransitionEnd);
+    }
+    
+    introOverlay.addEventListener('transitionend', onTransitionEnd);
+    
+    setTimeout(() => {
+        introOverlay.style.display = 'none';
+        introOverlay.classList.remove('hidden');
+    }, 600);
+}
 
 setTimeout(() => {
-    introOverlay.classList.add('hidden');
+    hideIntroOverlay();
     newGame.showModal();
 }, 2000);
+
 
 document.getElementById("cars").addEventListener("change", function () {
   var sayacDiv = document.getElementById("sayacDiv");
