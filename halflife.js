@@ -1,3 +1,13 @@
+const introOverlay = document.getElementById('intro-overlay');
+introOverlay.addEventListener('transitionend', () => {
+    introOverlay.style.display = 'none';
+}, { once: true });
+
+setTimeout(() => {
+    introOverlay.classList.add('hidden');
+    newGame.showModal();
+}, 2000);
+
 document.getElementById("cars").addEventListener("change", function () {
   var sayacDiv = document.getElementById("sayacDiv");
   var discordDiv = document.getElementById("discordDiv");

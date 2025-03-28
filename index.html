@@ -7,9 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.6">
     <meta name="description" content="Man, I feel like Gordon Freeman!">
     <link rel="icon" href="img/halfsepul.png">
+    <link rel="preload" href="img/hello-ryo-yamada.webm" as="video" type="video/webm" fetchpriority="high">
 </head>
 
 <body>
+
+    <div id="intro-overlay">
+        <video id="intro-video" autoplay muted playsinline aria-label="roy">
+            <source src="img/hello-ryo-yamada.webm" type="video/webm">
+        </video>
+    </div>
+
     <div class="options">
         <div class="title">
             <div class="icon"><img src="img/seplve2.png" class="logo"></div>
