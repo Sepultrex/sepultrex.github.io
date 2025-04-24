@@ -11,8 +11,12 @@
 <body>
 
   <div id="intro-overlay">
-    <video id="intro-video" autoplay muted playsinline aria-label="roy">
+    <p id="loading-text" style="color: white; text-size-adjust: 20px;">The site is still under development. <br>Some
+      features may not work as expected and there may be bugs.<br><br> The site will be available in a few seconds
+      <br>We appreciate your patience. </p>
+    <video id="intro-video" autoplay muted playsinline aria-label="roy" onloadeddata="hideLoadingText()">
       <source src="img/hello-ryo-yamada.webm" type="video/webm">
+      Tarayıcınız video etiketini desteklemiyor.
     </video>
   </div>
 
@@ -39,7 +43,7 @@
       </div>
       <div class="window-body has-space">
         <div class="image-container">
-          <img src="https://count.getloli.com/@s?theme=booru-ve" alt=":sepl" class="responsive-img" />
+          <img src="https://count.getloli.com/@sepultrex?theme=booru-ve" alt=":sepl" class="responsive-img" />
         </div>
       </div>
       <div class="status-bar">

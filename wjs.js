@@ -1,3 +1,7 @@
+    function hideLoadingText() {
+      document.getElementById('loading-text').style.display = 'none';
+    }
+
 const introOverlay = document.getElementById("intro-overlay");
 const introVideo = document.getElementById("intro-video");
 
@@ -25,7 +29,7 @@ function hideIntroOverlay() {
 setTimeout(() => {
   hideIntroOverlay();
   newGame.showModal();
-}, 2000);
+}, 5500);
 
 function setupWindowControl(buttonFunction, containerSelector, windowClass) {
   window[buttonFunction] = function () {
