@@ -1,3 +1,296 @@
-<html style="background-color: black;">
-<img src="images.png">
+<html>
+
+<head>
+  <title>sepul🦖</title>
+  <link rel="stylesheet" href="https://unpkg.com/7.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="win7.css" />
+  <link rel="preload" href="img/hello-ryo-yamada.webm" as="video" type="video/webm" fetchpriority="high">
+</head>
+
+<body>
+
+  <div id="intro-overlay">
+    <video id="intro-video" autoplay muted playsinline aria-label="roy">
+      <source src="img/hello-ryo-yamada.webm" type="video/webm">
+    </video>
+  </div>
+
+  <div class="solicon" onclick="myFunction()">
+    <img src="img/1029.png" class="i1029" alt="Who am I?" draggable="false" oncontextmenu="return false;" />
+    <p class="soltext">Who am I?</p>
+  </div>
+
+  <div class="solicon" onclick="myFunction2()">
+    <img src="img/179.png" class="i1029" alt="social" draggable="false" oncontextmenu="return false;" />
+    <p class="soltext">socials</p>
+  </div>
+
+  <div class="solicon" onclick="myFunction3()">
+    <img src="img/68.png" class="i1029" alt="services" draggable="false" oncontextmenu="return false;" />
+    <p class="soltext">services</p>
+  </div>
+
+  <!--sayac-->
+  <div class="sayacdivi">
+    <div class="window" style="max-width: 470px">
+      <div class="title-bar">
+        <div class="title-bar-text">Page Visitor Count</div>
+      </div>
+      <div class="window-body has-space">
+        <div class="image-container">
+          <img src="https://count.getloli.com/@s?theme=booru-ve" alt=":sepl" class="responsive-img" />
+        </div>
+      </div>
+      <div class="status-bar">
+        <p class="status-bar-field">Press F1 for help</p>
+        <p class="status-bar-field">Slide 1</p>
+        <p class="status-bar-field">CPU Usage: 14%</p>
+      </div>
+    </div>
+  </div>
+
+  <!--who am i-->
+
+  <div class="kimbu-container">
+    <div class="window active" style="max-width: 400px">
+      <div class="title-bar">
+        <div class="title-bar-text">Who am i?</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body has-space">
+        <menu role="tablist" aria-label="Window with Tabs">
+          <button role="tab" aria-controls="aboutme" aria-selected="true">
+            About Me
+          </button>
+          <button role="tab" disabled aria-controls="hobies">Hobbies</button>
+          <button role="tab" aria-controls="cat">funny cat vid</button>
+        </menu>
+        <article role="tabpanel" id="aboutme">
+          <p>
+            I am a Pull Stack Developer with 9 years of experience. <br />
+            I just pull things off the internet and put it into my code.
+          </p>
+
+          <p>
+            <br />I enjoy reading manga, watching anime and science fiction
+            movies especially films by Christopher Nolan. I also like building
+            simple websites, making simple Python scripts, and custom CSS for
+            programs, websites, etc. Long story short I enjoy
+            tweaking/customizing things or making them more useful for myself.
+            Maybe it's a bit irrelevant but I'm also a fan of Hideo Kojima’s
+            work. :d
+          </p>
+        </article>
+
+        <article role="tabpanel" hidden id="hobies"></article>
+
+        <article role="tabpanel" hidden id="cat">
+          <iframe width="100%" height="200" src="https://www.youtube.com/embed/SMoXHjVBJ4c" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </article>
+
+        <section class="field-row" style="justify-content: flex-end">
+          <button class="default">OK</button>
+          <button>Cancel</button>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!--socials-->
+
+  <div class="social-container">
+    <div class="window active" style="max-width: 400px">
+      <div class="title-bar">
+        <div class="title-bar-text">socials</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body has-space">
+        <menu role="tablist" aria-label="Window with Tabs">
+          <button role="tab" aria-controls="socials" aria-selected="true">
+            Links
+          </button>
+          <button role="tab" aria-controls="music">
+            Recently Played Music
+          </button>
+          <button role="tab" aria-controls="Activities">Activities</button>
+        </menu>
+        <article role="tabpanel" id="socials">
+          <h4>My Social Media Links</h4>
+          <hr />
+          <a href="https://x.com/ceoofsinop" target="_blank">
+            <button class="cs-btn">X/Twitter</button>
+          </a>
+          <a href="https://open.spotify.com/user/xr3b4ocme24xp1b5cocgarfjw" target="_blank">
+            <button class="cs-btn">Spotify</button>
+          </a>
+          <a href="https://www.twitch.tv/ceoofsinop" target="_blank">
+            <button class="cs-btn">Twitch</button>
+          </a>
+          <a href="https://github.com/Sepultrex" target="_blank">
+            <button class="cs-btn">Github</button>
+          </a>
+          <a href="https://anilist.co/user/Sinop/" target="_blank">
+            <button class="cs-btn">Anilist</button>
+          </a>
+          <a href="https://www.last.fm/tr/user/sepultrex" target="_blank">
+            <button class="cs-btn">Last.fm</button>
+          </a>
+          <a href="https://steamcommunity.com/profiles/76561199057877336/x" target="_blank">
+            <button class="cs-btn">Steam</button>
+          </a>
+        </article>
+
+        <article role="tabpanel" hidden id="music">
+
+          <a href="https://www.last.fm/tr/user/sepultrex" target="_blank">
+            <img width="100%" alt="Last.fm"
+              src="https://lastfm-recently-played.vercel.app/api?user=sepultrex&loved=true&loved_style=1&footer_style=compact_stats&show_user=footer&count=3&width=400&bg_color=000e1e" />
+          </a>
+        </article>
+
+        <article role="tabpanel" hidden id="Activities">
+          <label>Choose a service: </label>
+          <select id="serviceSelect">
+            <option value="discord">Discord</option>
+            <option value="steam">Steam</option>
+          </select>
+
+          <div id="discordDiv">
+            <a href="https://discord.com/users/547781202019483651" target="_blank">
+              <img width="100%" alt="Discord Status"
+                src="https://lanyard.cnrad.dev/api/547781202019483651?ignoreAppId=&idleMessage=&showDisplayName=true&theme=light&bg="
+                id="discordimg" />
+            </a>
+          </div>
+
+          <div id="steamDiv" style="display: none">
+            <a href="https://discord.com/users/547781202019483651" target="_blank">
+              <img width="300" alt="steam"
+                src="https://github-readme-steam-card.vercel.app/status/?steamid=76561199057877336" id="steamimg" />
+            </a>
+          </div>
+        </article>
+
+        <section class="field-row" style="justify-content: flex-end">
+          <button class="default">OK</button>
+          <button>Cancel</button>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!--services-->
+  <div class="services-container">
+    <div class="window active" style="max-width: 400px">
+      <div class="title-bar">
+        <div class="title-bar-text">Another window with contents</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body has-space">
+        <menu role="tablist" aria-label="Window with Tabs">
+          <button role="tab" aria-controls="ae" aria-selected="true">
+            note
+          </button>
+          <button role="tab" aria-controls="dogs">Versions</button>
+          <button role="tab" aria-controls="crididididi">Credits</button>
+        </menu>
+        <article role="tabpanel" id="ae">
+          <p>made in sinop with 👓 and 💝 by batu ^_____^</p>
+        </article>
+
+        <article role="tabpanel" hidden id="dogs">
+          <h4>old versions</h4>
+          <hr />
+
+          <a href="/v1" target="_blank"> <button>v1</button> </a>
+          <a href="/v2" target="_blank"> <button>v2</button> </a>
+          <button disabled>v3</button>
+          <button disabled>v4</button>
+        </article>
+
+        <article role="tabpanel" hidden id="crididididi">
+          <a href="https://github.com/khang-nd/7.css" target="_blank">
+            <button class="cs-btn">used css: khang-nd/7.css</button>
+          </a>
+          <a href="https://github.com/journey-ad/Moe-Counter" target="_blank">
+            <button class="cs-btn">visitor counter</button>
+          </a>
+          <a href="https://github.com/cnrad/lanyard-profile-readme" target="_blank">
+            <button class="cs-btn">discord profile thing</button>
+          </a>
+          <a href="https://github.com/FN-FAL113/github-readme-steam-card" target="_blank">
+            <button class="cs-btn">steam profile thing</button>
+          </a>
+          <a href="https://github.com/kittinan/spotify-github-profile" target="_blank">
+            <button class="cs-btn">spotify playing now</button>
+          </a>
+          <a href="https://github.com/JeffreyCA/lastfm-recently-played-readme" target="_blank">
+            <button class="cs-btn">last.fm recently played</button>
+          </a>
+          <a href="https://github.com/ekmas/cs16.css" target="_blank">
+            <button class="cs-btn">old css: ekmas/cs16.css</button>
+          </a>
+
+          <p>
+            many many thanks to these developers for sharing their work with
+            us and letting us use it
+          </p>
+        </article>
+
+        <section class="field-row" style="justify-content: flex-end">
+          <button class="default">OK</button>
+          <button>Cancel</button>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div class="taskbar">
+    <div class="window glass active"
+      style="max-width: 100%; height: 40px; display: flex; align-items: center; padding: 0 10px; border-radius: 0px !important;">
+      <div style="display: inline-block;">
+        <img src="img/start.png" class="startpng" draggable="false" />
+      </div>
+
+      <div
+        style="width: 60px; height: 42px; display: inline-block; margin-left: 10.2px; border-radius: 0px !important; cursor: pointer;"
+        onclick="openSpotifyApp()">
+        <div class="title-bar">
+          <i class="fa fa-spotify" style="font-size:34px; margin-top: 2px; margin-left: 6.5px;"></i>
+        </div>
+      </div>
+
+      <div
+        style="width: 60px; height: 42px; display: inline-block; margin-left: 10.2px; border-radius: 0px !important; cursor: pointer;"
+        onclick="opensteamapp()">
+        <div class="title-bar">
+          <i class="fa fa-steam" style="font-size:34px; margin-top: 2px; margin-left: 6.5px;"></i>
+        </div>
+      </div>
+
+      <div class="time-date" style="margin-left: auto;">
+        <span id="time"></span><br />
+        <span id="date"></span>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<script src="wjs.js"></script>
+
 </html>
