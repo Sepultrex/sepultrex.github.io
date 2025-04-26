@@ -1,36 +1,3 @@
-    function hideLoadingText() {
-      document.getElementById('loading-text').style.display = 'none';
-    }
-
-const introOverlay = document.getElementById("intro-overlay");
-const introVideo = document.getElementById("intro-video");
-
-introVideo.muted = true;
-introVideo.play().catch((error) => {
-  console.log("Autoplay was prevented:", error);
-});
-
-function hideIntroOverlay() {
-  introOverlay.classList.add("hidden");
-
-  function onTransitionEnd() {
-    introOverlay.style.display = "none";
-    introOverlay.removeEventListener("transitionend", onTransitionEnd);
-  }
-
-  introOverlay.addEventListener("transitionend", onTransitionEnd);
-
-  setTimeout(() => {
-    introOverlay.style.display = "none";
-    introOverlay.classList.remove("hidden");
-  }, 600);
-}
-
-setTimeout(() => {
-  hideIntroOverlay();
-  newGame.showModal();
-}, 5500);
-
 function setupWindowControl(buttonFunction, containerSelector, windowClass) {
   window[buttonFunction] = function () {
     const containerElement = document.querySelector(containerSelector);
@@ -247,27 +214,6 @@ setupWindowControl("myFunction", ".kimbu-container", "kimbu");
 setupWindowControl("myFunction2", ".social-container", "social");
 setupWindowControl("myFunction3", ".services-container", "services");
 
-function updateTimeAndDate() {
-  const timeElement = document.getElementById("time");
-  const dateElement = document.getElementById("date");
-
-  const now = new Date();
-
-  const hours = now.getHours().toString().padStart(2, "0");
-  const minutes = now.getMinutes().toString().padStart(2, "0");
-  const timeString = `${hours}:${minutes}`;
-
-  const day = now.getDate().toString().padStart(2, "0");
-  const month = (now.getMonth() + 1).toString().padStart(2, "0");
-  const year = now.getFullYear();
-  const dateString = `${day}/${month}/${year}`;
-
-  timeElement.textContent = timeString;
-  dateElement.textContent = dateString;
-}
-updateTimeAndDate();
-setInterval(updateTimeAndDate, 1000);
-
 document
   .getElementById("serviceSelect")
   .addEventListener("change", function () {
@@ -372,7 +318,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       </div>
       <div class="window-body has-space">
-        <p>💙🦐💙🦐💙🦐💙🦐</p>
+        <p>💙🦐</p>
       </div>
     </div>
   `;
@@ -446,6 +392,300 @@ function openSpotifyApp() {
   window.location.href = spotifyUri;
 }
 
-function opensteamapp() {
-  window.open("steam://openurl/https://steamcommunity.com/id/ceoofsinop");
+function setupWindowControls() {
+  const styleElement = document.createElement("style");
+  styleElement.textContent = `
+    @keyframes taskbarBounce {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    
+    /* Make windows draggable by their title bar */
+    .window.draggable {
+      cursor: move;
+    }
+  `;
+  document.head.appendChild(styleElement);
+
+  window.setupWindowControl = function (
+    containerSelector,
+    taskbarIconSelector,
+    activeIconSrc,
+    inactiveIconSrc,
+    options = {}
+  ) {
+    const containerElement = document.querySelector(containerSelector);
+    if (!containerElement) return;
+
+    const windowElement = containerElement.querySelector(".window");
+    const taskbarIcon = document.querySelector(taskbarIconSelector);
+
+    if (!windowElement || !taskbarIcon) return;
+
+    const defaultOptions = {
+      startVisible: true,
+      draggable: false,
+      steamLaunch: false,
+      steamUrl: "steam://open/main",
+      spotifyLaunch: false,
+      spotifyUrl: "https://open.spotify.com",
+      redirectDelay: 2000,
+    };
+
+    const settings = { ...defaultOptions, ...options };
+
+    const activeIcon = activeIconSrc || taskbarIcon.src;
+    const inactiveIcon = inactiveIconSrc || taskbarIcon.src;
+
+    function updateTaskbarIcon(isWindowOpen) {
+      let existingGlow = taskbarIcon.parentNode.querySelector(".taskbar-glow");
+
+      if (isWindowOpen) {
+        taskbarIcon.src = activeIcon;
+
+        if (!existingGlow) {
+          const glowElement = document.createElement("div");
+          glowElement.className = "taskbar-glow";
+
+          taskbarIcon.insertAdjacentElement("afterend", glowElement);
+          glowElement.style.bottom = "0px";
+          glowElement.style.left = taskbarIcon.offsetLeft + "px";
+          glowElement.style.width = taskbarIcon.offsetWidth + "px";
+        } else if (existingGlow.classList.contains("taskbar-glow-remove")) {
+          existingGlow.classList.remove("taskbar-glow-remove");
+        }
+      } else {
+        taskbarIcon.src = inactiveIcon;
+
+        if (existingGlow) {
+          existingGlow.classList.add("taskbar-glow-remove");
+
+          setTimeout(() => {
+            if (existingGlow.parentNode) {
+              existingGlow.remove();
+            }
+          }, 300);
+        }
+      }
+    }
+
+    function addClickAnimation() {
+      taskbarIcon.style.animation = "taskbarBounce 0.3s";
+
+      setTimeout(() => {
+        taskbarIcon.style.animation = "";
+      }, 300);
+    }
+
+    function launchExternalApp(url) {
+      windowElement.style.display = "block";
+      windowElement.style.zIndex = "999";
+      windowElement.classList.add("window-appear");
+      updateTaskbarIcon(true);
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, settings.redirectDelay);
+    }
+
+    function launchSteam() {
+      launchExternalApp(settings.steamUrl);
+    }
+
+    function launchSpotify() {
+      launchExternalApp(settings.spotifyUrl);
+    }
+
+    function toggleWindow() {
+      addClickAnimation();
+
+      if (settings.steamLaunch) {
+        launchSteam();
+        return;
+      }
+
+      if (settings.spotifyLaunch) {
+        launchSpotify();
+        return;
+      }
+
+      const allWindows = document.querySelectorAll(".window");
+      allWindows.forEach((win) => {
+        win.style.zIndex = "1";
+      });
+
+      if (windowElement.style.display === "none") {
+        windowElement.style.display = "block";
+        windowElement.style.zIndex = "999";
+        windowElement.classList.add("window-appear");
+        setTimeout(() => {
+          windowElement.classList.remove("window-appear");
+        }, 500);
+
+        updateTaskbarIcon(true);
+      } else {
+        windowElement.style.zIndex = "999";
+      }
+    }
+
+    function closeWindow() {
+      windowElement.classList.add("window-disappear");
+      setTimeout(() => {
+        windowElement.style.display = "none";
+        windowElement.classList.remove("window-disappear");
+
+        updateTaskbarIcon(false);
+      }, 300);
+    }
+
+    const closeButton = containerElement.querySelector(
+      "button[aria-label='Close']"
+    );
+    const minimizeButton = containerElement.querySelector(
+      "button[aria-label='Minimize']"
+    );
+    const maximizeButton = containerElement.querySelector(
+      "button[aria-label='Maximize']"
+    );
+
+    if (closeButton) {
+      closeButton.addEventListener("click", closeWindow);
+    }
+
+    if (minimizeButton) {
+      minimizeButton.addEventListener("click", closeWindow);
+    }
+
+    let isMaximized = false;
+    if (maximizeButton) {
+      maximizeButton.addEventListener("click", function () {
+        if (!isMaximized) {
+          windowElement.dataset.oldWidth = windowElement.style.width || "470px";
+          windowElement.dataset.oldHeight =
+            windowElement.style.height || "auto";
+          windowElement.dataset.oldLeft = windowElement.style.left || "100px";
+          windowElement.dataset.oldTop = windowElement.style.top || "100px";
+
+          windowElement.style.width = "90%";
+          windowElement.style.height = "80vh";
+          windowElement.style.left = "5%";
+          windowElement.style.top = "10vh";
+        } else {
+          windowElement.style.width = windowElement.dataset.oldWidth;
+          windowElement.style.height = windowElement.dataset.oldHeight;
+          windowElement.style.left = windowElement.dataset.oldLeft;
+          windowElement.style.top = windowElement.dataset.oldTop;
+        }
+        isMaximized = !isMaximized;
+      });
+    }
+
+    if (taskbarIcon) {
+      taskbarIcon.addEventListener("click", toggleWindow);
+      taskbarIcon.style.cursor = "pointer";
+    }
+
+    windowElement.addEventListener("click", function () {
+      const allWindows = document.querySelectorAll(".window");
+      allWindows.forEach((win) => {
+        win.style.zIndex = "1";
+      });
+      this.style.zIndex = "999";
+    });
+
+    if (settings.draggable) {
+      windowElement.classList.add("draggable");
+
+      const titleBar =
+        windowElement.querySelector(".window-title-bar") ||
+        windowElement.firstElementChild;
+
+      if (titleBar) {
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        titleBar.addEventListener("mousedown", function (e) {
+          isDragging = true;
+          offsetX = e.clientX - windowElement.getBoundingClientRect().left;
+          offsetY = e.clientY - windowElement.getBoundingClientRect().top;
+
+          const allWindows = document.querySelectorAll(".window");
+          allWindows.forEach((win) => {
+            win.style.zIndex = "1";
+          });
+          windowElement.style.zIndex = "999";
+        });
+
+        document.addEventListener("mousemove", function (e) {
+          if (isDragging) {
+            windowElement.style.left = e.clientX - offsetX + "px";
+            windowElement.style.top = e.clientY - offsetY + "px";
+          }
+        });
+
+        document.addEventListener("mouseup", function () {
+          isDragging = false;
+        });
+      }
+    }
+
+    const shouldBeVisible = settings.startVisible;
+    windowElement.style.display = shouldBeVisible ? "block" : "none";
+    windowElement.style.zIndex = shouldBeVisible ? "999" : "1";
+
+    updateTaskbarIcon(shouldBeVisible);
+
+    return {
+      open: function () {
+        windowElement.style.display = "block";
+        windowElement.style.zIndex = "999";
+        updateTaskbarIcon(true);
+      },
+      close: closeWindow,
+      toggle: toggleWindow,
+      launchSteam: launchSteam,
+      launchSpotify: launchSpotify,
+    };
+  };
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  setupWindowControls();
+
+  window.visitorCountControl = setupWindowControl(
+    ".sayacdivi",
+    "img.taskbar-window[src='img/taskbar/pgcTB.png']",
+    "img/taskbar/pgcTB.png",
+    "img/taskbar/pgc.png",
+    {
+      startVisible: true,
+      draggable: false,
+    }
+  );
+
+  window.steamWindowControl = setupWindowControl(
+    ".steamacilio",
+    "img.taskbar-window[src='img/taskbar/steamTB.png']",
+    "img/taskbar/steamTB.png",
+    "img/taskbar/steam.png",
+    {
+      startVisible: false,
+      steamLaunch: true,
+      steamUrl: "steam://openurl/https://steamcommunity.com/id/ceoofsinop",
+      redirectDelay: 2000,
+    }
+  );
+
+  window.spotifyWindowControl = setupWindowControl(
+    ".spotifyacilio",
+    "img.taskbar-window[src='img/taskbar/spotifyTB.png']",
+    "img/taskbar/spotifyTB.png",
+    "img/taskbar/spotify.png",
+    {
+      startVisible: false,
+      spotifyLaunch: true,
+      spotifyUrl: "spotify:user:xr3b4ocme24xp1b5cocgarfjw",
+      redirectDelay: 2000,
+    }
+  );
+});

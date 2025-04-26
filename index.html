@@ -5,21 +5,9 @@
   <link rel="stylesheet" href="https://unpkg.com/7.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="win7.css" />
-  <link rel="preload" href="img/hello-ryo-yamada.webm" as="video" type="video/webm" fetchpriority="high">
 </head>
 
 <body>
-
-  <div id="intro-overlay">
-    <p id="loading-text" style="color: white; text-size-adjust: 20px;">The site is still under development. <br>Some
-      features may not work as expected and there may be bugs.<br><br> The site will be available in a few seconds
-      <br>We appreciate your patience. </p>
-    <video id="intro-video" autoplay muted playsinline aria-label="roy" onloadeddata="hideLoadingText()">
-      <source src="img/hello-ryo-yamada.webm" type="video/webm">
-      Tarayıcınız video etiketini desteklemiyor.
-    </video>
-  </div>
-
   <div class="solicon" onclick="myFunction()">
     <img src="img/1029.png" class="i1029" alt="Who am I?" draggable="false" oncontextmenu="return false;" />
     <p class="soltext">Who am I?</p>
@@ -37,9 +25,14 @@
 
   <!--sayac-->
   <div class="sayacdivi">
-    <div class="window" style="max-width: 470px">
+    <div class="window active" style="max-width: 470px">
       <div class="title-bar">
         <div class="title-bar-text">Page Visitor Count</div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
       </div>
       <div class="window-body has-space">
         <div class="image-container">
@@ -47,9 +40,9 @@
         </div>
       </div>
       <div class="status-bar">
-        <p class="status-bar-field">Press F1 for help</p>
-        <p class="status-bar-field">Slide 1</p>
-        <p class="status-bar-field">CPU Usage: 14%</p>
+        <p class="status-bar-field">Press F57 for help</p>
+        <p class="status-bar-field">Slide 57</p>
+        <p class="status-bar-field">CPU Usage: 5757%</p>
       </div>
     </div>
   </div>
@@ -263,38 +256,58 @@
     </div>
   </div>
 
-  <div class="taskbar">
-    <div class="window glass active"
-      style="max-width: 100%; height: 40px; display: flex; align-items: center; padding: 0 10px; border-radius: 0px !important;">
-      <div style="display: inline-block;">
-        <img src="img/start.png" class="startpng" draggable="false" />
-      </div>
-
-      <div
-        style="width: 60px; height: 42px; display: inline-block; margin-left: 10.2px; border-radius: 0px !important; cursor: pointer;"
-        onclick="openSpotifyApp()">
-        <div class="title-bar">
-          <i class="fa fa-spotify" style="font-size:34px; margin-top: 2px; margin-left: 6.5px;"></i>
+  <div class="steamacilio">
+    <div class="window active" style="max-width: 300px">
+      <div class="title-bar">
+        <div class="title-bar-text">You are redirected to Steam</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close"></button>
         </div>
       </div>
-
-      <div
-        style="width: 60px; height: 42px; display: inline-block; margin-left: 10.2px; border-radius: 0px !important; cursor: pointer;"
-        onclick="opensteamapp()">
-        <div class="title-bar">
-          <i class="fa fa-steam" style="font-size:34px; margin-top: 2px; margin-left: 6.5px;"></i>
-        </div>
-      </div>
-
-      <div class="time-date" style="margin-left: auto;">
-        <span id="time"></span><br />
-        <span id="date"></span>
+      <div class="window-body has-space">
+        <p>You are being redirected to My Steam Profile<br>
+          Steam will open automatically</p>
+        <div role="progressbar" class="marquee"></div>
       </div>
     </div>
   </div>
 
-</body>
+  <div class="spotifyacilio">
+    <div class="window active" style="max-width: 300px">
+      <div class="title-bar">
+        <div class="title-bar-text">You are redirected to spotify</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body has-space">
+        <p>You are being redirected to My Spotify Profile<br>
+          Spotify will open automatically</p>
+        <div role="progressbar" class="marquee"></div>
+      </div>
+    </div>
+  </div>
 
+  <div class="taskbar">
+
+    <div>
+      <img src="img/taskbar/Gruppo3.png" class="taskbar" draggable="false" />
+
+      <div>
+        <img src="img/taskbar/start.png" class="taskbar-start" draggable="false" />
+        <img src="img/taskbar/pgcTB.png" class="taskbar-window" draggable="false" style="left: 75px;" />
+        <img src="img/taskbar/steamTB.png" class="taskbar-window" draggable="false" style="left: 150px" />
+        <img src="img/taskbar/spotifyTB.png" class="taskbar-window" draggable="false" style="left: 225px" />
+      </div>
+
+    </div>
+
+
+    <img src="img/taskbar/Gruppo1.png" class="taskbar-end" draggable="false" />
+  </div>
+
+
+</body>
 <script src="wjs.js"></script>
 
 </html>
