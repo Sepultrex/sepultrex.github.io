@@ -1,0 +1,81 @@
+html, body {
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+}
+
+body {
+
+    background-image: url("img/Shibuya.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  .container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    overflow: hidden;
+}
+
+#mainImage {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 20;
+    width: 100%;
+    height: auto;
+    transform: translateX(10%);
+    transition: transform 0.52 ease;
+}
+
+#mainImage.slide-left {
+    transform: translateX(-5%);
+    transition: transform 0.2s ease;
+}
+
+#newImage {
+    display: none;
+
+}
+
+#newImage.slide-in {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 22;
+    width: 100%;
+    height: auto;
+}
+
+#Letterboxing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.80);
+    z-index: 20;
+}
+
