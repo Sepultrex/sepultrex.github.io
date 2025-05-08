@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'Prompt';
+    src: url('./fonts/Prompt-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+
+.container {
+    color: white;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    min-width: 250px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#mask {
+    width: 40%;
+}
+
+p {
+    font-family: 'Prompt', sans-serif;
+}
+
+.container {
+    position: relative;
+}
+
+.image {
+    position: absolute;
+    width: 100%;
+    border-radius: 10px;
+    transition: opacity 0.2s ease;
+}
+
+#image1 {
+    z-index: 2;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#image2 {
+    z-index: 1;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
