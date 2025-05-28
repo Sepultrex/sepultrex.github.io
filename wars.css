@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Orbitron', monospace;
+    background: radial-gradient(ellipse at center, #1a1a2e 0%, #000000 100%);
+    color: #fff;
+    position: relative;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
+    padding-top: 30px;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 1;
+    transform-origin: center;
+    box-shadow: 0 0 4px white;
+}
+
+.star.moving {
+    animation: hyperspace 2.5s ease-out forwards;
+}
+
+@keyframes hyperspace {
+    0% {
+        width: 2px;
+        height: 2px;
+        opacity: 1;
+        box-shadow: 0 0 4px white;
+    }
+    30% {
+        width: 3px;
+        height: 20px;
+        opacity: 0.9;
+        box-shadow: 0 0 8px white, 0 0 16px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        width: 1px;
+        height: 150px;
+        opacity: 0;
+        box-shadow: 0 0 2px white;
+    }
+}
+
+.death-star {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 30% 30%, #666, #333, #000);
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.7;
+    animation: orbit 20s linear infinite;
+    box-shadow: 0 0 50px rgba(100, 100, 100, 0.3);
+}
+
+@keyframes orbit {
+    from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+.nick {
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.link {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 35px !important;
+    text-decoration: none;
+}
+
+.link a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 8px;
+    padding: 8px;
+    color: #ffffff;
+    cursor: pointer;
+    overflow: visible;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.link a::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.4), transparent 70%);
+    opacity: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    filter: blur(12px);
+    z-index: -1;
+}
+
+.link a:hover::before {
+    opacity: 1;
+    animation: pulseGlow 2s infinite;
+}
+
+.link a:hover {
+    animation: swing 0.6s ease-in-out forwards;
+}
+
+@keyframes swing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(4deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+h2 {
+    color: #d8d8d8;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+.widget {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+@media (min-width: 900px) {
+    .widget {
+        flex-direction: row;
+    }
+}
+
+.cizdiv {
+    border: 2px dashed #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.footer {
+    text-align: center;
+}
+
+.footer h6 {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .nick {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .nick h1 {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+    
+    .nick h2 {
+        font-size: 1rem;
+    }
+    
+    .link {
+        font-size: 28px !important;
+        margin-bottom: 25px;
+    }
+    
+    .link a {
+        margin: 0 6px;
+        padding: 6px;
+    }
+    
+    .widget {
+        gap: 12px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+    
+    .cizdiv {
+        padding: 10px;
+        max-width: 100%;
+        margin: 0;
+    }
+    
+    .cizdiv h3 {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .cizdiv img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .death-star {
+        width: 50px;
+        height: 50px;
+        top: 5%;
+        right: 5%;
+    }
+    
+    body {
+        padding: 10px;
+        padding-top: 20px;
+    }
+    
+    .footer h6 {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nick {
+        font-size: 1.1rem;
+    }
+    
+    .nick h1 {
+        font-size: 1.5rem;
+    }
+    
+    .nick h2 {
+        font-size: 0.9rem;
+    }
+    
+    .link {
+        font-size: 24px !important;
+    }
+    
+    .link a {
+        margin: 0 4px;
+        padding: 4px;
+    }
+    
+    .widget {
+        gap: 10px;
+        padding: 0 5px;
+    }
+    
+    .cizdiv {
+        padding: 8px;
+        border-width: 1px;
+    }
+    
+    .cizdiv h3 {
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+    }
+    
+    .death-star {
+        width: 40px;
+        height: 40px;
+    }
+    
+    body {
+        padding: 8px;
+        padding-top: 15px;
+    }
+    
+    .footer h6 {
+        font-size: 0.7rem;
+        margin-top: 15px;
+    }
+}

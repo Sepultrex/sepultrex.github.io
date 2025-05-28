@@ -1,577 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sepul🦖</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.cdnjs.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background-color: #0a0a0a;
-            color: #ffffff;
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-            position: relative;
-        }
-        
-        .pattern-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .main-container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .content-wrap {
-            max-width: 1200px;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        
-        .left-column {
-            flex: 1;
-            min-width: 300px;
-            padding: 2rem;
-        }
-        
-        .right-column {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        
-        /* Red accent line */
-        .red-accent {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, #e01b24, transparent);
-        }
-        
-        .card {
-            background-color: rgba(20, 20, 20, 0.7);
-            border-radius: 8px;
-            padding: 3rem;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(224, 27, 36, 0.1);
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-        
-        .card:hover {
-            box-shadow: 0 25px 50px rgba(224, 27, 36, 0.15);
-            transform: translateY(-5px);
-        }
-        
-        .card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100px;
-            height: 100px;
-            background-color: rgba(224, 27, 36, 0.1);
-            transform: rotate(45deg) translate(30px, -70px);
-            z-index: -1;
-        }
-        
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-            color: #ffffff;
-            letter-spacing: 1px;
-        }
-        
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background-color: #e01b24;
-        }
-        
-        .subtitle {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            color: #bbbbbb;
-        }
-        
-        p {
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            color: #dddddd;
-            max-width: 500px;
-        }
-        
-        .version-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-        
-        .btn {
-            padding: 0.8rem 1.5rem;
-            background-color: rgba(20, 20, 20, 0.8);
-            color: #ffffff;
-            border: 1px solid rgba(224, 27, 36, 0.5);
-            border-radius: 4px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(224, 27, 36, 0.2), transparent);
-            transition: all 0.5s ease;
-            z-index: -1;
-        }
-        
-        .btn:hover {
-            border-color: #e01b24;
-            color: #ffffff;
-            box-shadow: 0 5px 15px rgba(224, 27, 36, 0.2);
-        }
-        
-        .btn:hover::before {
-            left: 100%;
-        }
-        
-        .btn i {
-            margin-right: 0.5rem;
-        }
-        
-        .btn.featured {
-            background-color: rgba(224, 27, 36, 0.8);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        .btn.featured:hover {
-            background-color: #e01b24;
-            box-shadow: 0 5px 15px rgba(224, 27, 36, 0.3);
-        }
-        
-        /* Persona-inspired graphic */
-        .persona-graphic {
-            width: 100%;
-            max-width: 450px;
-            height: 450px;
-            position: relative;
-        }
-        
-        .circles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 2px solid rgba(224, 27, 36, 0.3);
-            transform-origin: center;
-            animation: rotate 60s linear infinite;
-        }
-        
-        .circles:nth-child(1) {
-            border-width: 1px;
-            animation-duration: 80s;
-        }
-        
-        .circles:nth-child(2) {
-            width: 80%;
-            height: 80%;
-            border-width: 2px;
-            border-color: rgba(224, 27, 36, 0.4);
-            animation-duration: 40s;
-            animation-direction: reverse;
-        }
-        
-        .circles:nth-child(3) {
-            width: 60%;
-            height: 60%;
-            border-width: 3px;
-            border-color: rgba(224, 27, 36, 0.5);
-            animation-duration: 30s;
-        }
-        
-        .mask-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40%;
-            height: 40%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .calendar-date {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 0.9rem;
-            color: #aaaaaa;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
-        
-        .day {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #e01b24;
-        }
-        
-        .counter {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .counter-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-width: 60px;
-        }
-        
-        .counter-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 0.3rem;
-        }
-        
-        .counter-label {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #888888;
-        }
-        
-        footer {
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            color: #777777;
-            text-align: center;
-            width: 100%;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            justify-content: flex-start;
-        }
-        
-        .social-link {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background-color: rgba(20, 20, 20, 0.8);
-            border: 1px solid rgba(224, 27, 36, 0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.3s ease;
-            color: #cccccc;
-            text-decoration: none;
-        }
-        
-        .social-link:hover {
-            background-color: rgba(224, 27, 36, 0.8);
-            border-color: transparent;
-            color: #ffffff;
-            transform: translateY(-3px);
-        }
-        
-        .bottom-footer {
-            margin-top: 4rem;
-            padding: 1.5rem;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            width: 100%;
-        }
-        
-        /* Persona-style animations */
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .take-your-time {
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: rgba(224, 27, 36, 0.8);
-            margin-top: 2rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .take-your-time::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(224, 27, 36, 0.5), transparent);
-        }
-        
-        .youtube-container {
-            width: 100%;
-            max-width: 450px;
-            margin-top: 40px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(224, 27, 36, 0.2);
-            position: relative;
-        }
-        
-        .youtube-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #e01b24, transparent);
-            z-index: 1;
-        }
-        
-        .youtube-embed {
-            width: 100%;
-            aspect-ratio: 16/9;
-            border: none;
-        }
-        
-        @media (max-width: 992px) {
-            .content-wrap {
-                flex-direction: column;
-                gap: 3rem;
-            }
-            
-            .left-column, .right-column {
-                width: 100%;
-            }
-            
-            .persona-graphic {
-                max-width: 350px;
-                height: 350px;
-            }
-            
-            .youtube-container {
-                max-width: 350px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .card {
-                padding: 2rem;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .counter {
-                gap: 1rem;
-            }
-            
-            .counter-number {
-                font-size: 1.5rem;
-            }
-            
-            .persona-graphic {
-                max-width: 280px;
-                height: 280px;
-            }
-            
-            .youtube-container {
-                max-width: 280px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="pattern-overlay"></div>
-    
-    <main class="main-container">
-        <div class="content-wrap">
-            <div class="left-column">
-                <div class="card">
-                    <div class="red-accent"></div>
-                    
-                    <div class="calendar-date">
-                        <span class="month">MAY</span>
-                        <span class="day">31</span>
-                        <span class="year">2025</span>
-                    </div>
-                    
-                    <h1>Persona Version Coming Soon</h1>
-                    <p class="subtitle">Life Will Change</p>
-                    
-                    <div class="counter">
-                        <div class="counter-item">
-                            <span class="counter-number" id="days">14</span>
-                            <span class="counter-label">Days</span>
-                        </div>
-                        <div class="counter-item">
-                            <span class="counter-number" id="hours">18</span>
-                            <span class="counter-label">Hours</span>
-                        </div>
-                        <div class="counter-item">
-                            <span class="counter-number" id="minutes">45</span>
-                            <span class="counter-label">Minutes</span>
-                        </div>
-                        <div class="counter-item">
-                            <span class="counter-number" id="seconds">27</span>
-                            <span class="counter-label">Seconds</span>
-                        </div>
-                    </div>
-                    
-                    <p>In the meantime, you can check out previous versions of our page below.</p>
-                    
-                    <div class="version-buttons">
-                        <a href="/v1" target="_blank" class="btn">
-                            <i class="fas fa-history"></i> Version 1
-                        </a>
-                        <a href="/v2" target="_blank" class="btn">
-                            <i class="fas fa-history"></i> Version 2
-                        </a>
-                        <a href="/v3" target="_blank" class="btn">
-                            <i class="fas fa-history"></i> Version 3
-                        </a>
-                        <a href="/v4" target="_blank" class="btn featured">
-                            <i class="fas fa-star"></i> Version 4 (Preview)
-                        </a>
-                    </div>
-                    
-                    <div class="take-your-time">Socials</div>
-                    
-                    <div class="social-links">
-                        <a href="https://x.com/ceoofsinop" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="https://github.com/Sepultrex" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="https://open.spotify.com/user/xr3b4ocme24xp1b5cocgarfjw?si=8bc402326a434d2d" class="social-link"><i class="fab fa-spotify"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="right-column">
-                <div class="persona-graphic">
-                    <div class="circles"></div>
-                    <div class="circles"></div>
-                    <div class="circles"></div>
-                    
-                    <div class="mask-container">
-                        <img src="v4/img/sep57.png" alt="Persona Graphic" class="persona-image" style="width: 100%; height: auto; border-radius: 5px">
-                    </div>
-                </div>
-                
-                <div class="youtube-container">
-                    <iframe 
-                        class="youtube-embed"
-                        src="https://www.youtube-nocookie.com/embed/dsuJZx24V_A?controls=1&rel=0"
-                        title="YouTube video player" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </main>
+<html lang="tr">
 
-    <script>
-        function updateCountdown() {
-            const now = new Date();
-            const targetDate = new Date(2025, 4, 31);
-            
-            const difference = targetDate - now;
-            
-            if (difference < 0) {
-                document.getElementById('days').textContent = '0';
-                document.getElementById('hours').textContent = '00';
-                document.getElementById('minutes').textContent = '00';
-                document.getElementById('seconds').textContent = '00';
-                return;
-            }
-            
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-        }
-        
-        updateCountdown();
-        
-        setInterval(updateCountdown, 1000);
-    </script>
+<head>
+    <title>sepul🦖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.6" />
+    <meta name="description" content="meow" />
+    <link rel="icon" href="sepdot.png" />
+    <link rel="stylesheet" type="text/css" href="wars.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="background-container" id="backgroundContainer"></div>
+    <div class="death-star"></div>
+
+    <div class="nick">
+        <h1>Sepultrex</h1>
+        <h2>aka CeoOfSinop</h2>
+    </div>
+
+    <div class="link">
+        <a href="https://x.com/sepultrex" target="_blank"><i class="fa-brands fa-x-twitter"
+                style="color: #ffffff;"></i></a>
+        <a href="https://www.instagram.com/ceoofsinop/" target="_blank"><i class="fa-brands fa-instagram"
+                style="color: #ffffff;"></i></a>
+        <a href="https://github.com/sepultrex" target="_blank"><i class="fa-brands fa-github"
+                style="color: #ffffff;"></i></a>
+        <a href="https://open.spotify.com/user/xr3b4ocme24xp1b5cocgarfjw?si=ea739e7de51c4118" target="_blank"><i
+                class="fa-brands fa-spotify" style="color: #ffffff;"></i></a>
+        <a href="https://anilist.co/user/Sinop/" target="_blank"
+            style="display: inline-flex; align-items: center; vertical-align: middle; text-decoration: none; color: inherit;"><svg
+                xmlns="http://www.w3.org/2000/svg" height="40" viewBox="0 0 24 24" fill="currentColor"
+                style="display: block;">
+                <path
+                    d="M6.361 2.943L0 21.056h4.942l1.077-3.133H11.4l1.052 3.133H22.9c.71 0 1.1-.392 1.1-1.101V17.53c0-.71-.39-1.101-1.1-1.101h-6.483V4.045c0-.71-.392-1.102-1.101-1.102h-2.422c-.71 0-1.101.392-1.101 1.102v1.064l-.758-2.166zm2.324 5.948l1.688 5.018H7.144z" />
+            </svg></a>
+    </div>
+
+    <div class="widget">
+        <div class="cizdiv">
+            <h3>Discord Status</h3>
+            <a href="https://discord.com/users/547781202019483651" target="_blank"> <img width="100%"
+                    alt="Discord Status"
+                    src="https://lanyard.cnrad.dev/api/547781202019483651?ignoreAppId=&idleMessage=&showDisplayName=true&theme=dark&bg="
+                    id="discordimg" /> </a>
+        </div>
+
+        <div class="cizdiv">
+            <h3>Steam Status</h3>
+            <a href="https://discord.com/users/547781202019483651" target="_blank"> <img width="100%" alt="steam"
+                    src="https://github-readme-steam-card.vercel.app/status/?steamid=76561199057877336"
+                    id="steamimg" /></a>
+        </div>
+
+        <div class="cizdiv">
+            <h3>Last.fm (Recently Played Song)</h3>
+            <a href="https://www.last.fm/tr/user/sepultrex" target="_blank"> <img width="100%" alt="Last.fm"
+                    src="https://lastfm-recently-played.vercel.app/api?user=sepultrex&loved=true&loved_style=1&footer_style=compact_stats&show_user=footer&count=2&width=400&bg_color=0" /></a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <h6>made in sinop with 👓 and 💝</h6>
+    </div>
+
+    <script src="star.js"></script>
+
 </body>
+
 </html>
