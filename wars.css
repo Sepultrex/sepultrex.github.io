@@ -198,6 +198,7 @@ h3 {
 
 .footer h6 {
     margin: 0;
+    margin-top: 15px;
 }
 
 @media (max-width: 768px) {
@@ -328,7 +329,7 @@ h3 {
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: -50;
+      z-index: 9999;
       word-spacing: 300px;
     }
 
@@ -343,3 +344,28 @@ h3 {
       100% { transform: translateX(-100%); }
     }
 
+.oldversion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px dashed #ffffff;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.cs-btn {
+    display: inline-block;
+    padding: 3px 3px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.cs-btn:hover {
+    background-color: #30304b;
+}
