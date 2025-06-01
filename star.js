@@ -53,3 +53,22 @@ document.querySelectorAll(".lightsaber-btn").forEach((btn) => {
     console.log("*Lightsaber ignition sound*");
   });
 });
+
+const deathStar = document.querySelector('.death-star');
+
+function moveDeathStarRandomly() {
+  const deathStarWidth = deathStar.offsetWidth;
+  const deathStarHeight = deathStar.offsetHeight;
+
+  const maxX = window.innerWidth - deathStarWidth;
+  const maxY = window.innerHeight - deathStarHeight;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  deathStar.style.left = `${x}px`;
+  deathStar.style.top = `${y}px`;
+}
+
+moveDeathStarRandomly();
+setInterval(moveDeathStarRandomly, 2000);
