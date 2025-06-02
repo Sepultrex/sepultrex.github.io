@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2132.96 1600">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffe2e9;
+      }
+
+      .cls-2 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        mix-blend-mode: multiply;
+      }
+    </style>
+  </defs>
+  <g class="cls-2">
+    <g id="_レイヤー_2" data-name="レイヤー 2">
+      <g id="_背景" data-name="背景">
+        <g>
+          <g class="cls-3">
+            <polygon class="cls-1" points="2132.96 0 940.42 0 1151.18 431.58 2049.76 170.36 2132.96 0"/>
+            <polygon class="cls-1" points="1536.69 1221 1806.76 667.97 1333.77 805.47 1536.69 1221"/>
+            <polygon class="cls-1" points="1170.74 471.63 1314.21 765.42 1832.79 614.67 2023.73 223.67 1170.74 471.63"/>
+          </g>
+          <g class="cls-3">
+            <polygon class="cls-1" points="0 1600 1372.67 1600 1130.08 1103.23 95.76 1403.91 0 1600"/>
+            <polygon class="cls-1" points="686.34 194.56 375.47 831.12 919.91 672.86 686.34 194.56"/>
+            <polygon class="cls-1" points="1107.57 1057.13 942.42 718.96 345.51 892.48 125.72 1342.55 1107.57 1057.13"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
