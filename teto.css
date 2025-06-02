@@ -282,7 +282,18 @@ body {
   }
 
   .third-con {
-    font-size: 30px;
+    font-size: 15px;
     text-align: center;
   }
+
+  .top-page {
+  background-size: cover;
+}
+
+  .third-sec {
+    font-size: 10px;
+    text-align: center;
+    max-width: 90%;
+  }
+
 }
