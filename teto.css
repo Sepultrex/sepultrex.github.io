@@ -10,7 +10,7 @@ body {
 
 .header {
   position: fixed;
-  top: 0;
+  top: 80px;
   left: 0;
   width: 100vw;
   background-color: #ffffff;
@@ -101,7 +101,7 @@ body {
 }
 
 .main-img1 {
-  margin-top: 240px;
+  margin-top: 310px;
   margin-left: 50px;
   z-index: 2;
   position: relative;
@@ -111,7 +111,7 @@ body {
 }
 
 .main-img2 {
-  margin-top: 80px;
+  margin-top: 150px;
   z-index: 1;
   position: relative;
   width: 500px;
@@ -211,11 +211,87 @@ body {
   color: #ffffff;
 }
 
+.acab {
+  background-color: red;
+  color: white;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 9999;
+  text-shadow: #000000 0px 0px 10px;
+}
+
+.acab span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: kayma 25s linear infinite;
+}
+
+.happi {
+  background: linear-gradient(
+    270deg,
+    #ff0000,
+    #ff8c00,
+    #ffff00,
+    #008000,
+    #0000ff,
+    #4b0082,
+    #ee82ee
+  );
+  background-size: 1400% 1400%;
+  animation: rainbowBg 50s ease infinite;
+  color: white;
+  text-shadow: #000000 0px 0px 10px;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: fixed;
+  top: 40px;
+  width: 100%;
+  z-index: 9999;
+}
+
+@keyframes rainbowBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.happi span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: kayma 30s linear infinite;
+}
+
+@keyframes kayma {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
 /* mobil uyumluluk */
 
 @media (max-width: 1100px) {
   .header {
     padding: 10px 25px;
+    top: 70px;
   }
 
   .main-container {
@@ -231,14 +307,14 @@ body {
   }
 
   .main-img1 {
-    margin-top: 430px;
+    margin-top: 500px;
     margin-left: 50px;
     width: 300px;
     margin-left: -5px;
   }
 
   .main-img2 {
-    margin-top: 80px;
+    margin-top: 150px;
     width: 400px;
     margin-left: -350px;
   }
@@ -296,4 +372,14 @@ body {
     max-width: 90%;
   }
 
+  .acab,
+  .happi {
+    font-size: 13px;
+  }
+
+  .happi {
+        top: 35px;
+  }
+
 }
+
