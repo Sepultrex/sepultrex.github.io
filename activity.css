@@ -5,12 +5,12 @@
 }
 
 body {
-  background-color: #e25174;
+  background-color: #4955ff;
 }
 
 .header {
   position: fixed;
-  top: 80px;
+  top: 0px;
   left: 0;
   width: 100vw;
   background-color: #ffffff;
@@ -58,11 +58,11 @@ body {
 }
 
 .nav-link.pink {
-  color: rgb(227, 85, 119);
+  color: #4955ff;
 }
 
 .nav-link.pink:hover {
-  color: rgba(227, 85, 119, 0.5);
+  color: #4955ff71;
 }
 
 .top-page {
@@ -79,20 +79,13 @@ body {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  background: url(img/top-back2.svg) no-repeat top center;
+  background: url(img/top-back2.png) no-repeat top center;
   background-size: cover;
   width: 180vw;
   height: 100%;
   max-width: 2050px;
   mix-blend-mode: multiply;
-  z-index: -1;
-}
-
-.main-container {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  z-index: 1;
+  z-index: -10;
 }
 
 .main1,
@@ -130,7 +123,21 @@ body {
   align-items: center;
   gap: 50px;
   height: 200px;
-  margin-top: 30px;
+  margin-top: 240px;
+}
+
+.second-cont-container {
+  position: relative;
+  z-index: 10;
+}
+
+.second-cont-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  height: 200px;
+  margin-top: 300px;
 }
 
 .iki-sol,
@@ -149,7 +156,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #e25174;
+  color: #4955ff;
   font-size: 50px;
   font-weight: bold;
   font-family: arial, sans-serif;
@@ -158,10 +165,11 @@ body {
 .sec-sec-l,
 .sec-sec-r {
   padding: 25px;
-  color: hsl(346, 71%, 15%);
-  font-size: 25px;
+  color: #0d103f;
+  font-size: 18px;
   font-weight: bold;
   font-family: arial, sans-serif;
+  text-align: center;
 }
 
 .sec-sec-r {
@@ -182,7 +190,7 @@ body {
 }
 
 .third-container {
-  background-color: #e25173;
+  background-color: #262c77;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -194,129 +202,23 @@ body {
 }
 
 .third-con {
-  font-size: 40px;
+  font-size: 20px;
   color: #ffffff;
 }
 
 .third-sec {
-  font-size: 20px;
+  font-size: 12px;
   color: #ffffff;
   max-width: 700px;
   overflow-wrap: break-word;
 }
-
-.kasane {
-  text-shadow: #000000 0px 0px 5px, #e0e0e0 0px 0px 10px, #e0e0e0 0px 0px 15px;
-  text-decoration: none;
-  color: #ffffff;
-}
-
-.acab {
-  background-color: red;
-  color: white;
-  padding: 10px 0;
-  font-weight: bold;
-  font-size: 18px;
-  white-space: nowrap;
-  overflow: hidden;
-  position: fixed;
-  top: 0px;
-  width: 100%;
-  z-index: 9999;
-  text-shadow: #000000 0px 0px 10px;
-}
-
-.acab span {
-  display: inline-block;
-  padding-left: 100%;
-  animation: kayma 25s linear infinite;
-}
-
-.happi {
-  background: linear-gradient(
-    270deg,
-    #ff0000,
-    #ff8c00,
-    #ffff00,
-    #008000,
-    #0000ff,
-    #4b0082,
-    #ee82ee
-  );
-  background-size: 1400% 1400%;
-  animation: rainbowBg 50s ease infinite;
-  color: white;
-  text-shadow: #000000 0px 0px 10px;
-  padding: 10px 0;
-  font-weight: bold;
-  font-size: 18px;
-  white-space: nowrap;
-  overflow: hidden;
-  position: fixed;
-  top: 40px;
-  width: 100%;
-  z-index: 9999;
-}
-
-@keyframes rainbowBg {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.happi span {
-  display: inline-block;
-  padding-left: 100%;
-  animation: kayma 30s linear infinite;
-}
-
-@keyframes kayma {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 
 /* mobil uyumluluk */
 
 @media (max-width: 1100px) {
   .header {
     padding: 10px 25px;
-    top: 70px;
-  }
-
-  .main-container {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    z-index: 1;
-  }
-
-  .main1,
-  .main2 {
-    position: relative;
-  }
-
-  .main-img1 {
-    margin-top: 500px;
-    margin-left: 50px;
-    width: 300px;
-    margin-left: -5px;
-  }
-
-  .main-img2 {
-    margin-top: 150px;
-    width: 400px;
-    margin-left: -350px;
+    top: 0px;
   }
 
   .second-container {
@@ -324,7 +226,15 @@ body {
     align-items: center;
     gap: 30px;
     height: auto;
-    margin-top: -10px;
+    margin-top: 100px;
+  }
+
+  .second-cont-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    height: auto;
+    margin-top: 30px;
   }
 
   .iki-sol,
@@ -363,8 +273,8 @@ body {
   }
 
   .top-page {
-  background-size: cover;
-}
+    background-size: cover;
+  }
 
   .third-sec {
     font-size: 10px;
@@ -372,14 +282,102 @@ body {
     max-width: 90%;
   }
 
-  .acab,
-  .happi {
-    font-size: 13px;
+  .sec-sec-l-button {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    text-align: center;
   }
 
-  .happi {
-        top: 35px;
+  .cs-btn-e {
+    background-color: #262c77;
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
   }
 
+  .cs-btn-e:hover {
+    background-color: rgba(102, 102, 102, 0.5);
+
+    transform: scale(1.01);
+  }
 }
 
+.sec-sec-l-button {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.cs-btn-e {
+  background-color: #262c77;
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.cs-btn-e:hover {
+  background-color: rgba(102, 102, 102, 0.5);
+
+  transform: scale(1.01);
+}
+
+/* ulan lera
+.sec-sec-l-button a {
+    text-decoration: none;
+}*/
+
+#quote-container {
+  font-size: 20px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: max-content;
+  max-width: 200px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Yazının üstünde gözüksün */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.kasane {
+  text-shadow: #000000 0px 0px 5px, #e0e0e0 0px 0px 10px, #e0e0e0 0px 0px 15px;
+  text-decoration: none;
+  color: #ffffff;
+}

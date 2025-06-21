@@ -1,0 +1,385 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #4955ff;
+}
+
+.header {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 10px 250px;
+  font-family: Arial, Helvetica, sans-serif;
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+.logo-icon {
+  width: 100px;
+  height: auto;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  padding: 0;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: rgb(102, 102, 102);
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  padding: 8px 0;
+}
+
+.nav-link:hover {
+  color: rgba(102, 102, 102, 0.5);
+}
+
+.nav-link.pink {
+  color: #4955ff;
+}
+
+.nav-link.pink:hover {
+  color: #4955ff71;
+}
+
+.top-page {
+  background: url(img/top-back.svg) no-repeat top center;
+  background-size: 100% auto;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.top-page::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url(img/top-back2.png) no-repeat top center;
+  background-size: cover;
+  width: 180vw;
+  height: 100%;
+  max-width: 2050px;
+  mix-blend-mode: multiply;
+  z-index: -10;
+}
+
+.main-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  z-index: 1;
+}
+
+.main1,
+.main2 {
+  position: relative;
+}
+
+.main-img1 {
+  margin-top: 310px;
+  margin-left: 50px;
+  z-index: 2;
+  position: relative;
+  width: 600px;
+  height: auto;
+  margin-left: -5px;
+}
+
+.main-img2 {
+  margin-top: 150px;
+  z-index: 1;
+  position: relative;
+  width: 500px;
+  height: auto;
+  margin-left: -3px;
+}
+
+.second-container {
+  position: relative;
+  z-index: 10;
+}
+
+.second-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  height: 200px;
+  margin-top: 30px;
+}
+
+.iki-sol,
+.iki-sag {
+  background-color: rgb(255, 255, 255);
+  width: 500px;
+  height: 450px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1000;
+}
+
+.sec-con-l,
+.sec-con-r {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #4955ff;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: arial, sans-serif;
+}
+
+.sec-sec-l,
+.sec-sec-r {
+  padding: 25px;
+  color: #0d103f;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: arial, sans-serif;
+}
+
+.sec-sec-r {
+  position: relative;
+  z-index: 100;
+}
+
+.sec-sec-r a {
+  position: relative;
+  z-index: 1001;
+  display: inline-block;
+  padding: 10px;
+  margin: 5px;
+}
+
+.sec-sec-r a:hover {
+  transform: scale(1.1);
+}
+
+.third-container {
+  background-color: #262c77;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 100px;
+  padding: 40px 75px;
+  overflow: visible;
+}
+
+.third-con {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.third-sec {
+  font-size: 12px;
+  color: #ffffff;
+  max-width: 700px;
+  overflow-wrap: break-word;
+}
+
+.kasane {
+  text-shadow: #000000 0px 0px 5px, #e0e0e0 0px 0px 10px, #e0e0e0 0px 0px 15px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.acab {
+  background-color: red;
+  color: white;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 9999;
+  text-shadow: #000000 0px 0px 10px;
+}
+
+.acab span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: kayma 25s linear infinite;
+}
+
+.happi {
+  background: linear-gradient(
+    270deg,
+    #ff0000,
+    #ff8c00,
+    #ffff00,
+    #008000,
+    #0000ff,
+    #4b0082,
+    #ee82ee
+  );
+  background-size: 1400% 1400%;
+  animation: rainbowBg 50s ease infinite;
+  color: white;
+  text-shadow: #000000 0px 0px 10px;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: fixed;
+  top: 40px;
+  width: 100%;
+  z-index: 9999;
+}
+
+@keyframes rainbowBg {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.happi span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: kayma 30s linear infinite;
+}
+
+@keyframes kayma {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* mobil uyumluluk */
+
+@media (max-width: 1100px) {
+  .header {
+    padding: 10px 25px;
+    top: 70px;
+  }
+
+  .main-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .main1,
+  .main2 {
+    position: relative;
+  }
+
+  .main-img1 {
+    margin-top: 500px;
+    margin-left: 50px;
+    width: 300px;
+    margin-left: -5px;
+  }
+
+  .main-img2 {
+    margin-top: 150px;
+    width: 400px;
+    margin-left: -350px;
+  }
+
+  .second-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    height: auto;
+    margin-top: -10px;
+  }
+
+  .iki-sol,
+  .iki-sag {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .sec-con-l,
+  .sec-con-r {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .sec-sec-l,
+  .sec-sec-r {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .sec-sec-r a {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .third-container {
+    padding: 30px 20px;
+    margin-top: 60px;
+  }
+
+  .third-con {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .top-page {
+    background-size: cover;
+  }
+
+  .third-sec {
+    font-size: 10px;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .acab,
+  .happi {
+    font-size: 13px;
+  }
+
+  .happi {
+    top: 35px;
+  }
+}
