@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #4955ff;
+  background-color: #262c77;
 }
 
 .header {
@@ -42,6 +42,7 @@ body {
   padding: 0;
   margin-left: auto;
   margin-right: 0;
+  align-items: center;
 }
 
 .nav-link {
@@ -49,12 +50,20 @@ body {
   color: rgb(102, 102, 102);
   font-size: 14px;
   font-weight: 600;
-  transition: color 0.3s ease;
   padding: 8px 0;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
-  color: rgba(102, 102, 102, 0.5);
+  color: rgba(102, 102, 102, 0.7);
+  transform: scale(1.1) translateY(-3px);
+  filter: drop-shadow(0 0 6px rgba(102, 102, 102, 0.5));
+  text-decoration: none;
 }
 
 .nav-link.pink {
@@ -62,7 +71,10 @@ body {
 }
 
 .nav-link.pink:hover {
-  color: #4955ff71;
+  color: #4955ffcc;
+  transform: scale(1.1) translateY(-3px);
+  filter: drop-shadow(0 0 8px rgba(73, 85, 255, 0.6));
+  text-decoration: none;
 }
 
 .top-page {
@@ -328,14 +340,18 @@ body {
   border-radius: 8px;
   font-size: 20px;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: 
+    background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cs-btn-e:hover {
-  background-color: rgba(102, 102, 102, 0.5);
-
-  transform: scale(1.01);
+  background-color: rgba(102, 102, 102, 0.7);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 8px 15px rgba(38, 44, 119, 0.6);
 }
+
 
 /* ulan lera
 .sec-sec-l-button a {
@@ -363,21 +379,67 @@ body {
   border-radius: 6px;
   position: absolute;
   z-index: 1;
-  bottom: 125%; /* Yazının üstünde gözüksün */
+  bottom: 125%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(10px);
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: 
+    opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
+  will-change: transform;
 }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  animation: floatText 3s ease-in-out infinite;
 }
 
+@keyframes floatText {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+
 .kasane {
-  text-shadow: #000000 0px 0px 5px, #e0e0e0 0px 0px 10px, #e0e0e0 0px 0px 15px;
-  text-decoration: none;
   color: #ffffff;
+  text-decoration: none;
+  text-shadow: #000000 0px 0px 5px, #e0e0e0 0px 0px 10px, #e0e0e0 0px 0px 15px;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    text-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+
+.kasane:hover {
+  color: #ffffff;
+  transform: scale(1.15) translateY(-3px);
+  text-shadow: #000000 0px 0px 8px, #000000 0px 0px 20px, #000000 0px 0px 30px;
+}
+
+.sinopp {
+  color: #0d103f;
+  text-decoration: none;
+  transition: 
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    text-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block; /* transform için */
+  cursor: pointer; /* istersen fare işaretçisi */
+}
+
+.sinopp:hover {
+  color: #4955ff;
+  transform: scale(1.15) translateY(-3px);
+  text-shadow: 
+    0 0 8px rgba(73, 85, 255, 0.7),
+    0 0 20px rgba(73, 85, 255, 0.5),
+    0 0 30px rgba(73, 85, 255, 0.3);
+  text-decoration: none;
 }

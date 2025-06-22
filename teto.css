@@ -5,12 +5,12 @@
 }
 
 body {
-  background-color: #4955ff;
+  background-color: #262c77;
 }
 
 .header {
   position: fixed;
-  top: 80px;
+  top: 40px;
   left: 0;
   width: 100vw;
   background-color: #ffffff;
@@ -42,6 +42,7 @@ body {
   padding: 0;
   margin-left: auto;
   margin-right: 0;
+  align-items: center;
 }
 
 .nav-link {
@@ -49,12 +50,22 @@ body {
   color: rgb(102, 102, 102);
   font-size: 14px;
   font-weight: 600;
-  transition: color 0.3s ease;
   padding: 8px 0;
+  transition: 
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
 }
 
 .nav-link:hover {
-  color: rgba(102, 102, 102, 0.5);
+  color: rgba(102, 102, 102, 0.7);
+  transform: scale(1.1) translateY(-3px);
+  filter: drop-shadow(0 0 6px rgba(102, 102, 102, 0.5));
+  text-decoration: none;
 }
 
 .nav-link.pink {
@@ -62,8 +73,12 @@ body {
 }
 
 .nav-link.pink:hover {
-  color: #4955ff71;
+  color: #4955ffcc;
+  transform: scale(1.1) translateY(-3px);
+  filter: drop-shadow(0 0 8px rgba(73, 85, 255, 0.6));
+  text-decoration: none;
 }
+
 
 .top-page {
   background: url(img/top-back.svg) no-repeat top center;
@@ -162,6 +177,7 @@ body {
   font-size: 25px;
   font-weight: bold;
   font-family: arial, sans-serif;
+  text-align: center;
 }
 
 .sec-sec-r {
@@ -175,10 +191,51 @@ body {
   display: inline-block;
   padding: 10px;
   margin: 5px;
+  color: #0d103f;
+  text-decoration: none;
+  transition: 
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sec-sec-r a:hover {
-  transform: scale(1.1);
+  color: #4955ff;
+  transform: scale(1.15) translateY(-3px);
+  filter: drop-shadow(0 0 8px rgba(73, 85, 255, 0.6));
+  text-decoration: none;
+}
+
+
+.sec-sec-r a[href*="x"]:hover {
+  color: #131313;
+}
+.sec-sec-r a[href*="instagram"]:hover {
+  color: #e1306c;
+}
+.sec-sec-r a[href*="github"]:hover {
+  color: #131313;
+}
+.sec-sec-r a[href*="spotify"]:hover {
+  color: #1db954;
+}
+.sec-sec-r a[href*="twitch"]:hover {
+  color: #9146ff;
+}
+.sec-sec-r a[href*="steam"]:hover {
+  color: #171a21;
+}
+.sec-sec-r a[href*="last.fm"]:hover {
+  color: #d51007;
+}
+.sec-sec-r a[href*="anilist"]:hover {
+  color: #2b9af3;
+}
+.sec-sec-r a[href*="youtube"]:hover {
+  color: #ff0000;
+}
+.sec-sec-r a[href*="discord"]:hover {
+  color: #7289da;
 }
 
 .third-container {
@@ -206,10 +263,28 @@ body {
 }
 
 .kasane {
-  text-shadow: #000000 0px 0px 5px, #e0e0e0 0px 0px 10px, #e0e0e0 0px 0px 15px;
-  text-decoration: none;
   color: #ffffff;
+  text-decoration: none;
+  text-shadow: 
+    #000000 0px 0px 5px, 
+    #e0e0e0 0px 0px 10px, 
+    #e0e0e0 0px 0px 15px;
+  transition: 
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    text-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
 }
+
+.kasane:hover {
+  color: #ffffff;
+  transform: scale(1.15) translateY(-3px);
+  text-shadow: 
+    #000000 0px 0px 8px,
+    #000000 0px 0px 20px,
+    #000000 0px 0px 30px;
+}
+
 
 .acab {
   background-color: red;
@@ -233,42 +308,39 @@ body {
 }
 
 .happi {
-  background: linear-gradient(
-    270deg,
-    #ff0000,
-    #ff8c00,
-    #ffff00,
-    #008000,
-    #0000ff,
-    #4b0082,
-    #ee82ee
+  background: repeating-linear-gradient(
+    90deg,
+    #e40303 0%,
+    #ff8c00 16.66%,
+    #ffed00 33.32%,
+    #008026 49.98%,
+    #004dff 66.64%,
+    #750787 83.3%,
+    #e40303 100%
   );
-  background-size: 1400% 1400%;
-  animation: rainbowBg 50s ease infinite;
+  background-size: 200% auto;
+  animation: rainbowFlow 12s linear infinite;
   color: white;
-  text-shadow: #000000 0px 0px 10px;
+  text-shadow: 0 0 10px #000000;
   padding: 10px 0;
   font-weight: bold;
   font-size: 18px;
   white-space: nowrap;
   overflow: hidden;
   position: fixed;
-  top: 40px;
+  top: 0;
   width: 100%;
   z-index: 9999;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@keyframes rainbowBg {
+@keyframes rainbowFlow {
   0% {
-    background-position: 0% 50%;
+    background-position: 0% center;
   }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
   100% {
-    background-position: 0% 50%;
+    background-position: 200% center;
   }
 }
 
@@ -293,7 +365,7 @@ body {
 @media (max-width: 1100px) {
   .header {
     padding: 10px 25px;
-    top: 70px;
+    top: 35px;
   }
 
   .main-container {
@@ -349,6 +421,10 @@ body {
     text-align: center;
   }
 
+  .sec-sec-r {
+    padding: 2px;
+  }
+
   .sec-sec-r a {
     padding: 10px;
     font-size: 16px;
@@ -376,10 +452,10 @@ body {
 
   .acab,
   .happi {
-    font-size: 13px;
+    font-size: 15px;
   }
 
   .happi {
-    top: 35px;
+    top: 0px;
   }
 }
