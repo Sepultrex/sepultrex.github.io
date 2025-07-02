@@ -51,11 +51,10 @@ body {
   font-size: 14px;
   font-weight: 600;
   padding: 8px 0;
-  transition: 
-    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     filter 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
@@ -78,7 +77,6 @@ body {
   filter: drop-shadow(0 0 8px rgba(73, 85, 255, 0.6));
   text-decoration: none;
 }
-
 
 .top-page {
   background: url(img/top-back.svg) no-repeat top center;
@@ -193,8 +191,7 @@ body {
   margin: 5px;
   color: #0d103f;
   text-decoration: none;
-  transition: 
-    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     filter 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -205,7 +202,6 @@ body {
   filter: drop-shadow(0 0 8px rgba(73, 85, 255, 0.6));
   text-decoration: none;
 }
-
 
 .sec-sec-r a[href*="x"]:hover {
   color: #131313;
@@ -228,14 +224,34 @@ body {
 .sec-sec-r a[href*="last.fm"]:hover {
   color: #d51007;
 }
-.sec-sec-r a[href*="anilist"]:hover {
-  color: #2b9af3;
-}
 .sec-sec-r a[href*="youtube"]:hover {
   color: #ff0000;
 }
 .sec-sec-r a[href*="discord"]:hover {
   color: #7289da;
+}
+.sec-sec-r a[href*="letterboxd"]:hover {
+  background: linear-gradient(
+    90deg,
+    #ff8a00 0%,
+    #ff8a00 42%,
+    #00d735 42%,
+    #00d735 58%,
+    #2b9af3 58%,
+    #2b9af3 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.anilist-link:hover .anilist-icon {
+  fill: url(#anilist-gradient);
+}
+
+.anilist-link svg {
+  height: 40px;
+  margin-bottom: -11px;
 }
 
 .third-container {
@@ -265,12 +281,8 @@ body {
 .kasane {
   color: #ffffff;
   text-decoration: none;
-  text-shadow: 
-    #000000 0px 0px 5px, 
-    #e0e0e0 0px 0px 10px, 
-    #e0e0e0 0px 0px 15px;
-  transition: 
-    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+  text-shadow: #000000 0px 0px 5px, #e0e0e0 0px 0px 10px, #e0e0e0 0px 0px 15px;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     text-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-block;
@@ -279,12 +291,8 @@ body {
 .kasane:hover {
   color: #ffffff;
   transform: scale(1.15) translateY(-3px);
-  text-shadow: 
-    #000000 0px 0px 8px,
-    #000000 0px 0px 20px,
-    #000000 0px 0px 30px;
+  text-shadow: #000000 0px 0px 8px, #000000 0px 0px 20px, #000000 0px 0px 30px;
 }
-
 
 .acab {
   background-color: red;
@@ -417,8 +425,11 @@ body {
 
   .sec-sec-l,
   .sec-sec-r {
-    font-size: 18px;
     text-align: center;
+  }
+
+  .sec-sec-l {
+    font-size: 20px;
   }
 
   .sec-sec-r {
@@ -427,7 +438,7 @@ body {
 
   .sec-sec-r a {
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .third-container {
@@ -457,5 +468,10 @@ body {
 
   .happi {
     top: 0px;
+  }
+
+  .anilist-link svg {
+    height: 30px;
+    margin-bottom: -7px;
   }
 }
