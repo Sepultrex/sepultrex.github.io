@@ -158,4 +158,25 @@ body {
   font-size: 0.8em;
 }
 
+body {
+  background-image: url("img/ryomobile.png");
+  background-color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: sans-serif;
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  min-height: 100vh;
+  color: aliceblue;
+  background-color: rgba(0, 0, 0, 0.582);
+}
+
+.linkopac {
+  opacity: 0.5;
+}
+
 }
