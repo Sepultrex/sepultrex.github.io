@@ -6,6 +6,7 @@
 
 body {
   background-image: url("img/ryo.png");
+  background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -33,7 +34,8 @@ body {
 .title {
   font-size: 1.5em;
   margin-left: 30px;
-  margin-bottom: 15px;
+  margin-bottom:10px;
+  margin-top: 40px;
   color: rgb(127, 127, 127);
 }
 
@@ -99,21 +101,8 @@ body {
   transition: height 0.3s ease;
 }
 
-@media (max-width: 900px) {
-  .container {
-    width: 90%;
-    margin: auto;
-  }
-  .seplogo {
-    width: 80%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-}
-
 .banner-slider {
+  margin-top: 5px;
   overflow: hidden;
   width: 100%;
   height: 120px;
@@ -140,3 +129,33 @@ body {
   display: block;
 }
 
+@media (max-width: 680px) {
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+  .seplogo {
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .title {
+  font-size: 0.9em;
+}
+
+.collapsible-title {
+  font-size: 0.9em;
+}
+
+.text {
+  font-size: 0.8em;
+}
+
+.link {
+  font-size: 0.8em;
+}
+
+}
