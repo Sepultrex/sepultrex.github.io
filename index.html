@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="omg ryo yamada from bocchi the rock helloooooo👋👋" />
     <link rel="icon" href="img/ea.webp" />
-    <link rel="stylesheet" type="text/css" href="sinope.css" />
+    <link id="theme-css" rel="stylesheet" type="text/css" href="sinope.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
     <div class="container">
 
-        <img src="img/sepultrex.png" class="seplogo" />
+        <img src="img/sepultrex.png" class="seplogo" id="logo" />
 
         <div class="content">
             <p class="title">- about me</p>
@@ -192,6 +192,44 @@
     }
 
     animate();
+
+const prideCode = ['p', 'r', 'i', 'd', 'e'];
+const biCode = ['b', 'i'];
+let inputSequence = [];
+
+document.addEventListener('keydown', (e) => {
+    inputSequence.push(e.key.toLowerCase());
+    if (inputSequence.length > 5) inputSequence.shift();
+
+    const currentInput = inputSequence.join('');
+
+    if (currentInput === prideCode.join('')) {
+        document.getElementById('theme-css').href = 'pride.css';
+
+        const logo = document.getElementById('logo');
+        if (logo) {
+            logo.src = 'img/sepultrexpride.png';
+        }
+
+        console.log('PRIDE modu aktif!');
+    }
+
+    if (currentInput === biCode.join('')) {
+        document.getElementById('theme-css').href = 'bi.css';
+
+        const logo = document.getElementById('logo');
+        if (logo) {
+            logo.src = 'img/sepultrexpride2.png';
+        }
+
+        console.log('BI modu aktif!');
+    }
+});
+
+
+    
+
+
 </script>
 
 </html>
